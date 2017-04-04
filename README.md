@@ -3,7 +3,7 @@
 
 [![NPM](https://nodei.co/npm/gulp-ftp.png?downloads=true)](https://www.npmjs.com/package/gulp-ftp)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-gulp-ftp/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-gulp-ftp_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-gulp-ftp/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-gulp-ftp/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-gulp-ftp_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-gulp-ftp/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-gulp-ftp/build/screenCapture.npmPackageListing.svg)
 
