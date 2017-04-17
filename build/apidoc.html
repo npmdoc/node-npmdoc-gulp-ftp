@@ -61,12 +61,147 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.gulp-ftp">module gulp-ftp</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-ftp.gulp-ftp">
+            function <span class="apidocSignatureSpan"></span>gulp-ftp
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-ftp.toString">
+            function <span class="apidocSignatureSpan">gulp-ftp.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-ftp.toString">module gulp-ftp.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-ftp.toString.toString">
+            function <span class="apidocSignatureSpan">gulp-ftp.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.gulp-ftp" id="apidoc.module.gulp-ftp">module gulp-ftp</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-ftp.gulp-ftp" id="apidoc.element.gulp-ftp.gulp-ftp">
+        function <span class="apidocSignatureSpan"></span>gulp-ftp
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">gulp-ftp = function (options) {
+	options = assign({}, options);
+	options.verbose = process.argv.indexOf(&#x27;--verbose&#x27;) !== -1;
+
+	if (options.host === undefined) {
+		throw new gutil.PluginError(&#x27;gulp-ftp&#x27;, &#x27;`host` required&#x27;);
+	}
+
+	var fileCount = 0;
+	var remotePath = options.remotePath || &#x27;&#x27;;
+	delete options.remotePath;
+
+	return through.obj(function (file, enc, cb) {
+		if (file.isNull()) {
+			cb(null, file);
+			return;
+		}
+
+		if (file.isStream()) {
+			cb(new gutil.PluginError(&#x27;gulp-ftp&#x27;, &#x27;Streaming not supported&#x27;));
+			return;
+		}
+
+		// have to create a new connection for each file otherwise they conflict
+		var ftp = new JSFtp(options);
+
+		var finalRemotePath = path.join(&#x27;/&#x27;, remotePath, file.relative).replace(/\\/g, &#x27;/&#x27;);
+
+		ftp.mkdirp(path.dirname(finalRemotePath).replace(/\\/g, &#x27;/&#x27;), function (err) {
+			if (err) {
+				cb(new gutil.PluginError(&#x27;gulp-ftp&#x27;, err, {fileName: file.path}));
+				return;
+			}
+
+			ftp.put(file.contents, finalRemotePath, function (err) {
+				if (err) {
+					cb(new gutil.PluginError(&#x27;gulp-ftp&#x27;, err, {fileName: file.path}));
+					return;
+				}
+
+				fileCount++;
+				ftp.raw.quit();
+				cb(null, file);
+			});
+		});
+
+		if (options.verbose) {
+			gutil.log(&#x27;gulp-ftp:&#x27;, chalk.green(&#x27;✔ &#x27;) + file.relative);
+		}
+	}, function (cb) {
+		if (fileCount &#x3e; 0) {
+			gutil.log(&#x27;gulp-ftp:&#x27;, gutil.colors.green(fileCount, plur(&#x27;file&#x27;, fileCount), &#x27;uploaded successfully&#x27;));
+		} else {
+			gutil.log(&#x27;gulp-ftp:&#x27;, gutil.colors.yellow(&#x27;No files uploaded&#x27;));
+		}
+
+		cb();
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-ftp.toString" id="apidoc.element.gulp-ftp.toString">
+        function <span class="apidocSignatureSpan">gulp-ftp.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-ftp.toString" id="apidoc.module.gulp-ftp.toString">module gulp-ftp.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-ftp.toString.toString" id="apidoc.element.gulp-ftp.toString.toString">
+        function <span class="apidocSignatureSpan">gulp-ftp.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 

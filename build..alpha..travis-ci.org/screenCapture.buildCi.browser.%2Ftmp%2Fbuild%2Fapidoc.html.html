@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/sindresorhus/gulp-ftp"
-
-    >gulp-ftp (v1.1.0)</a>
+    <a href="https://github.com/sindresorhus/gulp-ftp">gulp-ftp (v1.1.0)</a>
 </h1>
 <h4>Upload files to an FTP-server</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.gulp-ftp">module gulp-ftp</a><ol>
 
@@ -109,14 +102,14 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">gulp-ftp = function (options) {
 	options = assign({}, options);
-	options.verbose = process.argv.indexOf(&#x27;--verbose&#x27;) !== -1;
+	options.verbose = process.argv.indexOf('--verbose') !== -1;
 
 	if (options.host === undefined) {
-		throw new gutil.PluginError(&#x27;gulp-ftp&#x27;, &#x27;`host` required&#x27;);
+		throw new gutil.PluginError('gulp-ftp', '`host` required');
 	}
 
 	var fileCount = 0;
-	var remotePath = options.remotePath || &#x27;&#x27;;
+	var remotePath = options.remotePath || '';
 	delete options.remotePath;
 
 	return through.obj(function (file, enc, cb) {
@@ -126,24 +119,24 @@
 		}
 
 		if (file.isStream()) {
-			cb(new gutil.PluginError(&#x27;gulp-ftp&#x27;, &#x27;Streaming not supported&#x27;));
+			cb(new gutil.PluginError('gulp-ftp', 'Streaming not supported'));
 			return;
 		}
 
 		// have to create a new connection for each file otherwise they conflict
 		var ftp = new JSFtp(options);
 
-		var finalRemotePath = path.join(&#x27;/&#x27;, remotePath, file.relative).replace(/\\/g, &#x27;/&#x27;);
+		var finalRemotePath = path.join('/', remotePath, file.relative).replace(/\\/g, '/');
 
-		ftp.mkdirp(path.dirname(finalRemotePath).replace(/\\/g, &#x27;/&#x27;), function (err) {
+		ftp.mkdirp(path.dirname(finalRemotePath).replace(/\\/g, '/'), function (err) {
 			if (err) {
-				cb(new gutil.PluginError(&#x27;gulp-ftp&#x27;, err, {fileName: file.path}));
+				cb(new gutil.PluginError('gulp-ftp', err, {fileName: file.path}));
 				return;
 			}
 
 			ftp.put(file.contents, finalRemotePath, function (err) {
 				if (err) {
-					cb(new gutil.PluginError(&#x27;gulp-ftp&#x27;, err, {fileName: file.path}));
+					cb(new gutil.PluginError('gulp-ftp', err, {fileName: file.path}));
 					return;
 				}
 
@@ -154,13 +147,13 @@
 		});
 
 		if (options.verbose) {
-			gutil.log(&#x27;gulp-ftp:&#x27;, chalk.green(&#x27;✔ &#x27;) + file.relative);
+			gutil.log('gulp-ftp:', chalk.green('âœ” ') + file.relative);
 		}
 	}, function (cb) {
-		if (fileCount &#x3e; 0) {
-			gutil.log(&#x27;gulp-ftp:&#x27;, gutil.colors.green(fileCount, plur(&#x27;file&#x27;, fileCount), &#x27;uploaded successfully&#x27;));
+		if (fileCount &gt; 0) {
+			gutil.log('gulp-ftp:', gutil.colors.green(fileCount, plur('file', fileCount), 'uploaded successfully'));
 		} else {
-			gutil.log(&#x27;gulp-ftp:&#x27;, gutil.colors.yellow(&#x27;No files uploaded&#x27;));
+			gutil.log('gulp-ftp:', gutil.colors.yellow('No files uploaded'));
 		}
 
 		cb();
@@ -211,3 +204,4 @@
     ]
 </div>
 </div>
+</body></html>
