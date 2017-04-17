@@ -1,9 +1,11 @@
 # api documentation for  [gulp-ftp (v1.1.0)](https://github.com/sindresorhus/gulp-ftp)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-ftp.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-ftp) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-ftp.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-ftp)
 #### Upload files to an FTP-server
 
-[![NPM](https://nodei.co/npm/gulp-ftp.png?downloads=true)](https://www.npmjs.com/package/gulp-ftp)
+[![NPM](https://nodei.co/npm/gulp-ftp.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/gulp-ftp)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-gulp-ftp/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-gulp-ftp_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-gulp-ftp/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-gulp-ftp/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-gulp-ftp/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-gulp-ftp/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-gulp-ftp/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-gulp-ftp/build/screenCapture.npmPackageListing.svg)
 
@@ -18,7 +20,6 @@
 {
     "author": {
         "name": "Sindre Sorhus",
-        "email": "sindresorhus@gmail.com",
         "url": "sindresorhus.com"
     },
     "bugs": {
@@ -70,13 +71,11 @@
     "license": "MIT",
     "maintainers": [
         {
-            "name": "sindresorhus",
-            "email": "sindresorhus@gmail.com"
+            "name": "sindresorhus"
         }
     ],
     "name": "gulp-ftp",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/sindresorhus/gulp-ftp.git"
@@ -87,16 +86,6 @@
     "version": "1.1.0"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module gulp-ftp](#apidoc.module.gulp-ftp)
-
-
-
-# <a name="apidoc.module.gulp-ftp"></a>[module gulp-ftp](#apidoc.module.gulp-ftp)
 
 
 
