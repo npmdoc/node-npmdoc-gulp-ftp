@@ -1,4 +1,7 @@
-# api documentation for  [gulp-ftp (v1.1.0)](https://github.com/sindresorhus/gulp-ftp)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-ftp.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-ftp) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-ftp.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-ftp)
+# npmdoc-gulp-ftp
+
+#### basic api documentation for  [gulp-ftp (v1.1.0)](https://github.com/sindresorhus/gulp-ftp)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-ftp.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-ftp) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-ftp.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-ftp)
+
 #### Upload files to an FTP-server
 
 [![NPM](https://nodei.co/npm/gulp-ftp.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/gulp-ftp)
@@ -83,7 +86,8 @@
     "scripts": {
         "test": "mocha"
     },
-    "version": "1.1.0"
+    "version": "1.1.0",
+    "bin": {}
 }
 ```
 
